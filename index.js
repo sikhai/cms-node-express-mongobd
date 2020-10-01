@@ -7,6 +7,16 @@ const bodyparser = require('body-parser')
 
 var app = express()
 
+app.use(bodyparser.urlencoded({extended: false}))
+app.use(bodyparser.json())
+
+app.get('/', (req, res) => {
+    res.send(`
+    <h2>Xin chao ban da den voi Students Database</h2>
+    <h3>Nhan vao de xem chi tiet <b><a href="/student/list">Database</a></b></h3>
+    `)
+})
+
 app.listen(3000, () => {
     console.log("server stared at port 3000");
 })
