@@ -39,3 +39,4 @@ app.listen(3000, () => {
     console.log("server stared at port 3000");
 });
 
+app.use("/student", studentController);
